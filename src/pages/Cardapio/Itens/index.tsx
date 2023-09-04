@@ -20,17 +20,17 @@ export default function Itens( { busca, ordenador, filtro }: IProps) {
     if(filtro !== null) return categoryId === filtro;
     return true
   }
-  const ordenar = (itens:IItens):IItens  =>  {
+  const ordenar = (novaLista:IItens):IItens  =>  {
     switch (ordenador) {
       case 'porcao':
-        return itens.sort((a,b) => a.size > b.size ? 1 : -1)
-      case 'qtd-pessoas':
-        return itens.sort((a,b) => a.serving > b.serving ? 1 : -1)
+        return novaLista.sort((a,b) => a.size > b.size ? 1 : -1)
+      case 'qtd_pessoas':
+        return novaLista.sort((a,b) => a.serving > b.serving ? 1 : -1)
       case 'preco':
-        return itens.sort((a,b) => a.price > b.price ? 1 : -1)
+        return novaLista.sort((a,b) => a.price > b.price ? 1 : -1)
 
       default:
-        return itens;
+        return novaLista;
     }
   }
   useEffect(() => {
